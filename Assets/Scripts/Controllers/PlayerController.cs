@@ -6,6 +6,10 @@ using UnityEngine;
 public class PlayerController : Controller
 {
     private TankPawn playerPawn;
+    public KeyCode forwardKey;
+    public KeyCode backwardKey;
+    public KeyCode leftKey;
+    public KeyCode rightKey;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -22,19 +26,19 @@ public class PlayerController : Controller
 
     private void ProcessInputs()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(forwardKey))
         {
             playerPawn.MoveForward();
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(backwardKey))
         {
             playerPawn.MoveBackward();
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(leftKey))
         {
             playerPawn.Rotate(-1f);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(rightKey))
         {
             playerPawn.Rotate(1f);
         }

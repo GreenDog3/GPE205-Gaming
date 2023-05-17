@@ -293,14 +293,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 25.4, z: 2.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1516350283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,6 +308,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 254372529220937938, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: backwardSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794843292479434384, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: leftKey
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794843292479434384, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: rightKey
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794843292479434384, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: forwardKey
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794843292479434384, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: backwardKey
+      value: 274
+      objectReference: {fileID: 0}
     - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -318,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2800002
+      value: 0.984
       objectReference: {fileID: 0}
     - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -371,7 +391,7 @@ GameObject:
   - component: {fileID: 1852203911}
   - component: {fileID: 1852203910}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
