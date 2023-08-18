@@ -5,15 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(TankPawn))]
 public class PlayerController : Controller
 {
-    private TankPawn playerPawn;
+    
     public KeyCode forwardKey;
     public KeyCode backwardKey;
     public KeyCode leftKey;
     public KeyCode rightKey;
+    public KeyCode shootKey; 
     // Start is called before the first frame update
     public override void Start()
     {
-        playerPawn = GetComponent<TankPawn>();
+        pawn = GetComponent<Pawn>();
+        GameManager.instance.players.Add(this); //adds itself to the list of players
         base.Start();
     }
 
@@ -28,19 +30,28 @@ public class PlayerController : Controller
     {
         if (Input.GetKey(forwardKey))
         {
-            playerPawn.MoveForward();
+            pawn.MoveForward();
         }
         if (Input.GetKey(backwardKey))
         {
-            playerPawn.MoveBackward();
+            pawn.MoveBackward();
         }
         if (Input.GetKey(leftKey))
         {
-            playerPawn.Rotate(-1f);
+            pawn.Rotate(-1f);
         }
         if (Input.GetKey(rightKey))
         {
-            playerPawn.Rotate(1f);
+            pawn.Rotate(1f);
         }
+        if (Input.GetKeyDown(shootKey))
+        {
+            pawn.Shoot();
+        }
+    }
+
+    public void OnDestroy()
+    {
+        GameManager.instance.players.Remove(this);
     }
 }

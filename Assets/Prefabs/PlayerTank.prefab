@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 826248430910468059, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
+      propertyPath: shellLifespan
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6986527016325792328, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -63,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: d5f6073d0235c90489c18481a5c0a025, type: 2}
+    - target: {fileID: 8135535161203739028, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
+      propertyPath: m_Name
+      value: Tank
+      objectReference: {fileID: 0}
     - target: {fileID: 9075264635133303355, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Name
       value: PlayerTank
@@ -75,18 +83,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9075264635133303355, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
   m_PrefabInstance: {fileID: 644255429306648329}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8536095338653843948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8431033154839092530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b61dd0e22b707974cae1233d5b00f3c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6794843292479434384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,3 +95,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbafd6ddf8cab247a3ef1d110fb587f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forwardKey: 119
+  backwardKey: 115
+  leftKey: 97
+  rightKey: 100
+  shootKey: 32
+--- !u!114 &8536095338653843948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431033154839092530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61dd0e22b707974cae1233d5b00f3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 10
+  backwardSpeed: 7
+  fireForce: 1000
+  damageDone: 20
+  shellLifespan: 1.5
+  shellPrefab: {fileID: 0}
+  shotCooldownTime: 1

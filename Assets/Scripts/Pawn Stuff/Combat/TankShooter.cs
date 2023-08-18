@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TankShooter : Shooter
 {
-    public Transform firePoint;
-
     public override void Shoot(GameObject shellPrefab, float fireForce, float damageDone, float lifespan)
     {
         //spawn in bullet

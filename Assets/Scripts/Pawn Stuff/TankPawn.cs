@@ -1,41 +1,66 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TankShooter))]
+[RequireComponent (typeof(TankMover))]
 public class TankPawn : Pawn
 {
     private const float forwardDirection = 1f;
     private const float backwardDirection = -1f;
     public float forwardSpeed = 5f;
     public float backwardSpeed = 3f;
+    public float tankRotationSpeed;
+    public float fireForce = 1000;
+    public float damageDone = 20;
+    public float shellLifespan = 1.5f;
+    public GameObject shellPrefab;
+    private float secondsSinceLastShot = Mathf.Infinity;
+    public float shotCooldownTime = 1f;
     
     // Start is called before the first frame update
     public override void Start()
     {
         mover = GetComponent<TankMover>();
+        shooter = GetComponent<TankShooter>();
     }
 
     // Update is called once per frame
     public override void Update()
     {
-        
+        secondsSinceLastShot += Time.deltaTime;
     }
 
     public override void MoveForward()
     {
-        base.MoveForward();
         mover.Move(forwardSpeed, forwardDirection);
     }
 
     public override void MoveBackward()
     {
-        base.MoveBackward();
         mover.Move(backwardSpeed, backwardDirection);
     }
 
     public override void Rotate(float direction)
+    {//direction is set in the playercontroller, if the left key is pushed it's multiplied by -1 and becomes negative, if right then it's multiplied by 1 and nothing else happens
+        mover.Rotate(tankRotationSpeed * direction);
+    }
+
+    public override void Shoot()
+    {//If the time that has passed since the last shot is more than the time we set between shots, we can shoot. if not, nothing happens
+        if (secondsSinceLastShot > shotCooldownTime)
+        {
+            shooter.Shoot(shellPrefab, fireForce, damageDone, shellLifespan);
+            secondsSinceLastShot = 0;
+        }
+        
+    }
+
+    public override void RotateTowards(Vector3 targetPosition)
     {
-        base.Rotate(direction);
-        Debug.Log("Reorient!");
+        Vector3 vectorToTarget = targetPosition - transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget, Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, tankRotationSpeed*Time.deltaTime);
     }
 }

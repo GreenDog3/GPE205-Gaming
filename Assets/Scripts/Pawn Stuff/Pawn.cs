@@ -5,30 +5,19 @@ using UnityEngine;
 public abstract class Pawn : MonoBehaviour
 {
     protected Mover mover;
+    protected Shooter shooter;
     // Start is called before the first frame update
-    public virtual void Start()
-    {
-        
-    }
+    public abstract void Start();
 
     // Update is called once per frame
-    public virtual void Update()
-    {
-        
-    }
+    public abstract void Update();
 
-    public virtual void MoveForward()
-    {
+    public abstract void MoveForward();
 
-    }
+    public abstract void MoveBackward();
+    public abstract void Rotate(float direction);
 
-    public virtual void MoveBackward()
-    {
+    public abstract void Shoot();
 
-    }
-
-    public virtual void Rotate(float direction)
-    {
-
-    }
+    public abstract void RotateTowards(Vector3 targetPosition);
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class TankMover : Mover
@@ -18,8 +19,8 @@ public class TankMover : Mover
         tankRigidbody.MovePosition(currentPosition + (transform.forward * direction * moveSpeed * Time.deltaTime));
     }
 
-    public override void Rotate()
-    {
-        base.Rotate();
+    public override void Rotate(float turnSpeed)
+    {                                     //take note, lego island devs, THIS is how you unlock a turn speed from the framerate
+        tankRigidbody.transform.Rotate(0, turnSpeed*Time.deltaTime, 0);
     }
 }

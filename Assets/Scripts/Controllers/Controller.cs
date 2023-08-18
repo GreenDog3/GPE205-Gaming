@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public abstract class Controller : MonoBehaviour
 {
+    protected Pawn pawn;
     // Start is called before the first frame update
     public virtual void Start()
     {
