@@ -43,7 +43,7 @@ public class TankPawn : Pawn
     }
 
     public override void Rotate(float direction)
-    {//direction is set in the playercontroller, if the left key is pushed it's multiplied by -1 and becomes negative, if right then it's multiplied by 1 and nothing else happens
+    {//direction is set in the player controller, if the left key is pushed it's multiplied by -1 and becomes negative, if right then it's multiplied by 1 and nothing else happens
         mover.Rotate(tankRotationSpeed * direction);
     }
 

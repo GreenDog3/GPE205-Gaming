@@ -7,10 +7,10 @@ public class DamageOnHit : MonoBehaviour
     public float damage =20f;
     public Pawn owner;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         //get health of other gameobject
-        Health otherHealth = other.GetComponent<Health>();
+        Health otherHealth = other.gameObject.GetComponent<Health>();
         //only do damage if damage can be done
         if (otherHealth != null)
         {
