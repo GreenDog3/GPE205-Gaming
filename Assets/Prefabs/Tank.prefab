@@ -83,12 +83,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardSpeed: 10
   backwardSpeed: 3
-  tankRotationSpeed: 20
+  tankRotationSpeed: 50
   fireForce: 1000
   damageDone: 20
   shellLifespan: 1.5
   shellPrefab: {fileID: 3558363776885146267, guid: e5cb2724afa82fc43a31ae241a60ff94, type: 3}
-  shotCooldownTime: 1
+  shotCooldownTime: 2
+  noise: {fileID: 0}
 --- !u!54 &7564247549250778117
 Rigidbody:
   m_ObjectHideFlags: 0

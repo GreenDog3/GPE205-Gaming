@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbafd6ddf8cab247a3ef1d110fb587f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pawn: {fileID: 0}
   forwardKey: 119
   backwardKey: 115
   leftKey: 97
@@ -114,8 +115,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardSpeed: 10
   backwardSpeed: 7
+  tankRotationSpeed: 0
   fireForce: 1000
   damageDone: 20
   shellLifespan: 1.5
   shellPrefab: {fileID: 0}
   shotCooldownTime: 1
+--- !u!114 &3134293362098143633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431033154839092530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebba330fc2d821749845f549bbb28ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noiseDistance: 0

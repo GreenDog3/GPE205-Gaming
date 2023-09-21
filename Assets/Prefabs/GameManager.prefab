@@ -47,3 +47,15 @@ MonoBehaviour:
   points: 0
   players: []
   enemies: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerPrefab: {fileID: 8431033154839092530, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+  slackerPrefab: {fileID: 685509493012047829, guid: 96bbb602a48471d4c91d56322c41299d, type: 3}
+  guardPrefab: {fileID: 5587959213400960019, guid: d02ec5707952ffc499200a20d699722d, type: 3}
+  sniperPrefab: {fileID: 7258178092672504271, guid: 0ec9e1d0d9a88b047aaecf5eb06ca279, type: 3}
+  leeroyPrefab: {fileID: 1831949594386947493, guid: 9ffbb805fda7965459beb9c7430b3913, type: 3}
+  playerSpawn: {fileID: 0}
+  enemySpawn: {fileID: 0}

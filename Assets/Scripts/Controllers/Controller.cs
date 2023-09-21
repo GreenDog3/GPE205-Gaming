@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Controller : MonoBehaviour
 {
-    protected Pawn pawn;
+    public Pawn pawn;
     // Start is called before the first frame update
     public virtual void Start()
     {

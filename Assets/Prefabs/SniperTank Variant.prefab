@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &130695824875373448
+--- !u!1001 &1822809543433604084
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -13,15 +13,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6986527016325792328, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.8820044
       objectReference: {fileID: 0}
     - target: {fileID: 6986527016325792328, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.3075312
       objectReference: {fileID: 0}
     - target: {fileID: 6986527016325792328, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 6986527016325792328, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,41 +54,41 @@ PrefabInstance:
     - target: {fileID: 7775401329577453633, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 109cdc0a94ee9f04e8bd650ca160981f, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dff0a82dfd24d847a6806817c093cae, type: 2}
     - target: {fileID: 7775401329577453633, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 109cdc0a94ee9f04e8bd650ca160981f, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dff0a82dfd24d847a6806817c093cae, type: 2}
     - target: {fileID: 7775401329577453633, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 109cdc0a94ee9f04e8bd650ca160981f, type: 2}
+      objectReference: {fileID: 2100000, guid: 9dff0a82dfd24d847a6806817c093cae, type: 2}
     - target: {fileID: 9075264635133303355, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Name
-      value: EnemyTank
+      value: SniperTank
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
---- !u!1 &8944573491908958643 stripped
+--- !u!1 &7258178092672504271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9075264635133303355, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
-  m_PrefabInstance: {fileID: 130695824875373448}
+  m_PrefabInstance: {fileID: 1822809543433604084}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2447981171164459129
+--- !u!114 &1698920803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8944573491908958643}
+  m_GameObject: {fileID: 7258178092672504271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1caff9d5f55b654085c9f2497c12ba9, type: 3}
+  m_Script: {fileID: 11500000, guid: 94af6bbbe6d68f74c8d1e93b8ddbc886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pawn: {fileID: 0}
   currentState: 1
   target: {fileID: 0}
-  hearingDistance: 0
+  hearingDistance: 10
   waypoints: []
   currentWaypoint: 0

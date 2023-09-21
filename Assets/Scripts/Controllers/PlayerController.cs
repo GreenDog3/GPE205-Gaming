@@ -51,7 +51,7 @@ public class PlayerController : Controller
     }
 
     public void OnDestroy()
-    {
+    {   //if the player is dead, they shouldn't be in the list of alive players
         GameManager.instance.players.Remove(this);
     }
 }
