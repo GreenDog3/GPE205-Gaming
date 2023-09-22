@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,11 +16,15 @@ public class GameManager : MonoBehaviour
     [Header("Map Settings")]
     public GameObject mapGeneratorPrefab;
     public MapGenerator currentMapGenerator;
+    public bool is2PGame;
     public int typeOfMap;
     public int mapSeed;
+    public AudioMixer mixer;
+    public AudioSource sfxSource;
 
     [Header("Prefabs")]
     public GameObject playerPrefab;
+    public GameObject player2Prefab;
     public GameObject slackerPrefab;
     public GameObject guardPrefab;
     public GameObject sniperPrefab;
@@ -33,11 +39,19 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverObject;
     public TextMeshProUGUI playerOneScore;
     public TextMeshProUGUI playerOneLives;
+    public TextMeshProUGUI playerTwoScore;
+    public TextMeshProUGUI playerTwoLives;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI gameOverP1Score;
+    public TextMeshProUGUI gameOverP2Score;
 
     [Header("Player Info")]
+    public GameObject playerOne;
+    public GameObject playerTwo;
     public int p1Score;
+    public int p2Score;
     public int p1Lives;
+    public int p2Lives;
     public int startingLives;
 
 
@@ -66,32 +80,43 @@ public class GameManager : MonoBehaviour
     {
         GameManager.instance.DisplayP1Lives();
         GameManager.instance.DisplayP1Score();
+        GameManager.instance.DisplayP2Lives();
+        GameManager.instance.DisplayP2Score();
         if (currentMapGenerator != null)
         {
             if (p1Lives > 0)
             {
-                if (players.Count == 0)
+                if (playerOne == null)
                 {
                     SpawnPlayer();
                 }
 
-            }
-            else
-            {
-                ActivateGameOverState(false);
-            }
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                DestroyEnemies();
-            }
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                TryGameOver();
+
             }
 
+            if (is2PGame == true)
+            {
+                if (p2Lives > 0)
+                {
+                    if (playerTwo == null)
+                    {
+                        SpawnPlayerTwo();
+                    }
 
-
+                }
+            }
+            
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            DestroyEnemies();
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TryGameOver();
+        }
+
 
 
     }
@@ -110,6 +135,15 @@ public class GameManager : MonoBehaviour
         int randomIndex = Random.Range(0, playerSpawns.Length);
 
         GameObject newPawnObj = Instantiate(playerPrefab, playerSpawns[randomIndex].transform.position, playerSpawns[randomIndex].transform.rotation);
+        playerOne = newPawnObj;
+    }
+    public void SpawnPlayerTwo()
+    {
+        PlayerSpawner[] playerSpawns = FindObjectsOfType<PlayerSpawner>();
+        int randomIndex = Random.Range(0, playerSpawns.Length);
+
+        GameObject newPawnObj = Instantiate(player2Prefab, playerSpawns[randomIndex].transform.position, playerSpawns[randomIndex].transform.rotation);
+        playerTwo = newPawnObj;
     }
 
     public void SpawnSlacker()
@@ -198,6 +232,10 @@ public class GameManager : MonoBehaviour
     public void ActivateGameplayState()
     {
         p1Lives = startingLives;
+        if (is2PGame == true)
+        {
+            p2Lives = startingLives;
+        }
         //Deactivate other states
         DeactivateAllStates();
         //Reset level
@@ -230,6 +268,15 @@ public class GameManager : MonoBehaviour
         if (victory == true)
         {
             gameOverText.text = "You win!";
+            gameOverP1Score.text = "P1 Score: " + p1Score;
+            if (is2PGame == true)
+            {
+                gameOverP2Score.text = "P2 Score: " + p2Score;
+            }
+            else
+            {
+                gameOverP2Score.text = " ";
+            }
             if (currentMapGenerator != null)
             {
                 currentMapGenerator.ResetLevel();
@@ -239,6 +286,15 @@ public class GameManager : MonoBehaviour
         else
         {
             gameOverText.text = "You lose...";
+            gameOverP1Score.text = "P1 Score: " + p1Score;
+            if (is2PGame == true)
+            {
+                gameOverP2Score.text = "P2 Score: " + p2Score;
+            }
+            else
+            {
+                gameOverP2Score.text = " ";
+            }
             if (currentMapGenerator != null)
             {
                 currentMapGenerator.ResetLevel();
@@ -258,32 +314,126 @@ public class GameManager : MonoBehaviour
         playerOneLives.text = "P1 Lives: " + p1Lives;
     }
 
+    public void DisplayP2Score()
+    {
+        if (is2PGame == true)
+        {
+            playerTwoScore.text = "P2 Score: " + p2Score;
+        }
+        else
+        {
+            playerTwoScore.text = " ";
+        }
+        
+    }
+
+    public void DisplayP2Lives()
+    {
+        if (is2PGame == true)
+        {
+            playerTwoLives.text = "P2 Lives: " + p2Lives;
+        }
+        else
+        {
+            playerTwoLives.text = " ";
+        }
+    }
+
     public void TryGameOver()
     {
-        Debug.Log("Game Over Attempted at " + Time.time);
-        bool isGameOver = true;
+        if (is2PGame == false)
+        {
+            Debug.Log("Game Over Attempted at " + Time.time);
+            bool isGameOver = true;
+
+            //default true
+            if ((p1Lives > 0))
+            {
+                isGameOver = false;
+            }
+            else if (enemies.Count > 0)
+            {
+                isGameOver = false;
+            }
+            else
+            {
+                isGameOver = true;
+            }
+            if (enemies.Count == 0)
+            {
+                isGameOver = true;
+            }
+            if (players.Count == 0)
+            {
+                isGameOver = true;
+            }
+
+
+
+            if (isGameOver == true)
+            {
+                if (players.Count == 0)
+                {
+                    //If there are no players, the players lose
+                    ActivateGameOverState(false);
+
+                }
+                if (enemies.Count == 0) //if there are players
+                {
+                    //if there are no more enemies, the game is over and we win
+                    ActivateGameOverState(true);
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Game Over Attempted at " + Time.time);
+            bool isGameOver = true;
+
+            //default true
+            if ((p1Lives > 0))
+            {
+                isGameOver = false;
+            }
+            //p1 is dead, this would be true
+            if (p2Lives > 0)
+            {
+                isGameOver = false;
+            }
+            //p2 is alive, therefore it is false
+            else
+            {
+                isGameOver = true;
+            }
+
+            if (enemies.Count == 0)
+            {
+                isGameOver = true;
+            }
+            if (players.Count == 0)
+            {
+                isGameOver = true;
+            }
+
+            if (isGameOver == true)
+            {
+                if (players.Count == 0)
+                {
+                    //If there are no players, the players lose
+                    ActivateGameOverState(false);
+
+                }
+                if (enemies.Count == 0) //if there are players
+                {
+                    //if there are no more enemies, the game is over and we win
+                    ActivateGameOverState(true);
+                }
+            }
+        }
+
         
-        //default true
-        if (p1Lives > 0)
-        {
-            isGameOver = false;
-        }
 
-        if (isGameOver == true)
-        {
-            ActivateGameOverState(false);
-        }
-
-        if (enemies.Count == 0) //if we don't have 0 lives
-        {
-            //if there are no more enemies, the game is over and we win
-            isGameOver = true;
-        }
-        if (isGameOver == true)
-        {
-            ActivateGameOverState(true);
-            
-        }
+        
     }
 
     public void DestroyTanks()

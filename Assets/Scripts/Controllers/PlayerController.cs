@@ -52,7 +52,7 @@ public class PlayerController : Controller
         {
             if (GameManager.instance.enemies.Count == 0)
             {
-                GameManager.instance.TryGameOver();
+                GameManager.instance.ActivateGameOverState(true);
             }
         }
     }

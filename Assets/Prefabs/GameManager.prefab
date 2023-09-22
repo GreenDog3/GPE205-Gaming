@@ -47,15 +47,33 @@ MonoBehaviour:
   points: 0
   players: []
   enemies: []
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  mapGeneratorPrefab: {fileID: 2408591951283447875, guid: 6697ce36a2f21af44b5e25fccc7fdc85, type: 3}
+  currentMapGenerator: {fileID: 0}
+  is2PGame: 0
+  typeOfMap: 0
+  mapSeed: 0
+  mixer: {fileID: 24100000, guid: fa1b95290c16c4b4688d1026ce8cd36f, type: 2}
   playerPrefab: {fileID: 8431033154839092530, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+  player2Prefab: {fileID: 7757578085234411971, guid: 89bfbbe0e1dc5a0488f3c2b6c1eb4117, type: 3}
   slackerPrefab: {fileID: 685509493012047829, guid: 96bbb602a48471d4c91d56322c41299d, type: 3}
   guardPrefab: {fileID: 5587959213400960019, guid: d02ec5707952ffc499200a20d699722d, type: 3}
   sniperPrefab: {fileID: 7258178092672504271, guid: 0ec9e1d0d9a88b047aaecf5eb06ca279, type: 3}
   leeroyPrefab: {fileID: 1831949594386947493, guid: 9ffbb805fda7965459beb9c7430b3913, type: 3}
-  playerSpawn: {fileID: 0}
-  enemySpawn: {fileID: 0}
+  titleObject: {fileID: 0}
+  mainMenuObject: {fileID: 0}
+  creditsObject: {fileID: 0}
+  optionsObject: {fileID: 0}
+  gameplayObject: {fileID: 0}
+  gameOverObject: {fileID: 0}
+  playerOneScore: {fileID: 0}
+  playerOneLives: {fileID: 0}
+  playerTwoScore: {fileID: 0}
+  playerTwoLives: {fileID: 0}
+  gameOverText: {fileID: 0}
+  playerOne: {fileID: 0}
+  playerTwo: {fileID: 0}
+  p1Score: 0
+  p2Score: 0
+  p1Lives: 0
+  p2Lives: 0
+  startingLives: 3

@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   owner: {fileID: 0}
+  clip: {fileID: 8300000, guid: 497f67fd7603a134790bc39310b5b1b6, type: 3}
+  source: {fileID: 0}
 --- !u!54 &5216853283292064339
 Rigidbody:
   m_ObjectHideFlags: 0

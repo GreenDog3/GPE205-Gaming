@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Health : MonoBehaviour
     public float maxHealth =100f;
     public int pointsWorth;
     public Pawn pawn;
+    public Image image;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
+        image.fillAmount = currentHealth/maxHealth;
         if (IsBreakingContainment() == true)
         {
             Die(100, pawn);

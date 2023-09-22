@@ -24,7 +24,15 @@ public class AIController : Controller
 
     public override void Update()
     {
+        if (GameManager.instance != null)
+        {
+            if (GameManager.instance.players.Count == 0)
+            {
+                GameManager.instance.ActivateGameOverState(false);
+            }
+        }
         MakeDecisions();
+        
     }
 
     public override void MakeDecisions()

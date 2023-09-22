@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2209437653000590577
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7140207304172957512, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a0c2066e92704fb43b1285ea4c754aca, type: 2}
+    - target: {fileID: 7140207304172957512, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a0c2066e92704fb43b1285ea4c754aca, type: 2}
+    - target: {fileID: 7140207304172957512, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: a0c2066e92704fb43b1285ea4c754aca, type: 2}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495673855239013697, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431033154839092530, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+      propertyPath: m_Name
+      value: PlayerTwoTank
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6794843292479434384, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+--- !u!1 &7757578085234411971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8431033154839092530, guid: c4f84bfc7eb04b54eb329785e577b1ae, type: 3}
+  m_PrefabInstance: {fileID: 2209437653000590577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2655576039224713284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7757578085234411971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eec595b6c379d47893424a6a5ac253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawn: {fileID: 0}
+  score: 0
+  forwardKey: 273
+  backwardKey: 274
+  leftKey: 276
+  rightKey: 275
+  shootKey: 256
