@@ -12,12 +12,13 @@ public class MapGenerator : MonoBehaviour
     public float roomHeight = 25.0f;
     private Room[,] grid;
 
-    public enum MapType{ Random, MapOfTheDay, SetSeed};
+    public enum MapType{Random, MapOfTheDay, SetSeed};
     public MapType mapType;
 
     private void Awake()
     {
         GenerateMap();
+        GameManager.instance.currentMapGenerator = this;
     }
 
     public GameObject RandomRoomPrefab()
@@ -27,8 +28,8 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        //mapType = (MapType)GameManager.instance.typeOfMap;
-        //mapSeed = (int)GameManager.instance.mapSeed;
+        mapType = (MapType)GameManager.instance.typeOfMap;
+        mapSeed = (int)GameManager.instance.mapSeed;
 
         if (mapType == MapType.SetSeed)
         {
@@ -37,7 +38,7 @@ public class MapGenerator : MonoBehaviour
         }
         else if (mapType == MapType.Random)
         {
-            //seed randomly by using the clock since time is linear
+            //seed randomly by using the clock since time is linear2
             System.DateTime time;
             time = System.DateTime.Now;
             Random.InitState((int)time.Ticks);
@@ -105,5 +106,10 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ResetLevel()
+    {
+        Destroy(this.gameObject);
     }
 }

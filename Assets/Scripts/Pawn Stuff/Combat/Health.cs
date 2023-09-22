@@ -7,10 +7,22 @@ public class Health : MonoBehaviour
     private const float minHealth = 0f;
     public float currentHealth;
     public float maxHealth =100f;
+    public int pointsWorth;
+    public Pawn pawn;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        pawn = GetComponent<Pawn>();
+    }
+
+    private void Update()
+    {
+        if (IsBreakingContainment() == true)
+        {
+            Die(100, pawn);
+            GameManager.instance.TryGameOver();
+        }
     }
 
     public void TakeDamage(float damage, Pawn source)
@@ -19,12 +31,14 @@ public class Health : MonoBehaviour
         if (source != null)
         {
             Debug.Log(source.name + " SLAMS " + gameObject.name + " WITH " + damage + " POINTS OF DAMAGE!");
+            GameManager.instance.TryGameOver();
         }
         
         //if current health is zero, Die
         if (Mathf.Approximately(currentHealth, minHealth))
         {
-            Die(source);
+            Die(pointsWorth, source);
+            GameManager.instance.TryGameOver();
         }
     }
 
@@ -33,13 +47,24 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amount, minHealth, maxHealth);
     }
 
-    public void Die(Pawn source) 
+    public void Die(int points, Pawn source) 
     {   //when you die, you are destroyed
         Destroy(gameObject);
         if (source != null)
         {
             Debug.Log(source.name + " DESTROYS " + gameObject.name + " WITH FACTS AND LOGIC!");
+            source.controller.AddToScore(points);
+            GameManager.instance.TryGameOver();
         }
         
+    }
+
+    public bool IsBreakingContainment()
+    {
+        if (pawn.transform.position.y <= -10)
+        {
+            return true;
+        }
+        return false;
     }
 }

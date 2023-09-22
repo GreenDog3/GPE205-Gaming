@@ -30,4 +30,8 @@ public class PickupSpawner : MonoBehaviour
             nextSpawnTime = Time.time + spawnDelay;
         }
     }
+    private void OnDestroy()
+    {
+        Destroy(spawnedPickup);
+    }
 }

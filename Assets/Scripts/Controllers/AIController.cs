@@ -27,7 +27,7 @@ public class AIController : Controller
         MakeDecisions();
     }
 
-    public virtual void MakeDecisions()
+    public override void MakeDecisions()
     {
         switch (currentState)
         {
@@ -80,7 +80,11 @@ public class AIController : Controller
 
     public void DoTurnState()
     {
-        pawn.RotateTowards(target.transform.position);
+        if (target != null)
+        {
+            pawn.RotateTowards(target.transform.position);
+        }
+        
     }
 
     public void DoScanState()

@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61dd0e22b707974cae1233d5b00f3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   forwardSpeed: 50
   backwardSpeed: 40
   tankRotationSpeed: 50
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 100
+  pointsWorth: 100
 --- !u!114 &-8657588490847008109
 MonoBehaviour:
   m_ObjectHideFlags: 0

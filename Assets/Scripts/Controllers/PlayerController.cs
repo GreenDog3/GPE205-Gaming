@@ -23,7 +23,7 @@ public class PlayerController : Controller
     public override void Update()
     {
         ProcessInputs();
-        base.Update();
+        GameManager.instance.p1Score = score;
     }
 
     private void ProcessInputs()
@@ -48,10 +48,28 @@ public class PlayerController : Controller
         {
             pawn.Shoot();
         }
+        if (GameManager.instance != null)
+        {
+            if (GameManager.instance.enemies.Count == 0)
+            {
+                GameManager.instance.TryGameOver();
+            }
+        }
+    }
+
+    public override void AddToScore(int points)
+    {
+        score += points;
+        GameManager.instance.TryGameOver();
     }
 
     public void OnDestroy()
-    {   //if the player is dead, they shouldn't be in the list of alive players
+    {   
+        //removes life
+        GameManager.instance.p1Lives = GameManager.instance.p1Lives - 1;
+        //checks for game over
+        GameManager.instance.TryGameOver();
+        //if the player is dead, they shouldn't be in the list of alive players
         GameManager.instance.players.Remove(this);
     }
 }

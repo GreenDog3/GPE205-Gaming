@@ -6,6 +6,7 @@ public abstract class Pawn : MonoBehaviour
 {
     protected Mover mover;
     protected Shooter shooter;
+    public Controller controller;
     // Start is called before the first frame update
     public abstract void Start();
 

@@ -26,6 +26,7 @@ public class TankPawn : Pawn
         mover = GetComponent<TankMover>();
         shooter = GetComponent<TankShooter>();
         noise = GetComponent<Noisemaker>();
+        controller = GetComponent<Controller>();
     }
 
     // Update is called once per frame
@@ -87,5 +88,10 @@ public class TankPawn : Pawn
         Vector3 vectorToTarget = targetPosition - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(-vectorToTarget, Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, tankRotationSpeed * Time.deltaTime);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.TryGameOver();
     }
 }
