@@ -89,7 +89,7 @@ MonoBehaviour:
   pawn: {fileID: 8064497744564693061}
   currentState: 1
   target: {fileID: 0}
-  hearingDistance: 5
+  hearingDistance: 15
   waypoints: []
   currentWaypoint: 0
 --- !u!114 &8064497744564693061 stripped

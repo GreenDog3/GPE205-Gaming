@@ -7,12 +7,13 @@ using UnityEngine;
 
 public class AIController : Controller
 {
-    public enum AIState {Idle, Chase, Flee, Patrol, Attack, Scan, Turn};
+    public enum AIState {Idle, Chase, Flee, Patrol, Attack, Scan, Turn, Return};
     public AIState currentState = AIState.Chase;
     private float lastStateChangeTime = 0f;
     public GameObject target = null;
     public float hearingDistance;
     public List<Transform> waypoints;
+    public Transform homeBase;
     public int currentWaypoint = 0;
     public override void Start()
     {
@@ -124,6 +125,14 @@ public class AIController : Controller
             currentWaypoint = 0;
         }
 
+    }
+
+    public void DoReturnState()
+    {
+        Vector3 tempTargetLocation = homeBase.position;
+        tempTargetLocation = new Vector3(tempTargetLocation.x, pawn.transform.position.y, tempTargetLocation.z);
+        pawn.RotateTowards(tempTargetLocation);
+        pawn.MoveForward();
     }
 
     public void DoFleeState()

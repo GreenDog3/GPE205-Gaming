@@ -52,7 +52,15 @@ public class SniperAIController : AIController
                     }
                     else
                     {
-                        ChangeAIState(AIState.Idle);
+                        if (Vector3.Distance(pawn.transform.position, homeBase.position) <= 3)
+                        {
+                            ChangeAIState(AIState.Idle);
+                        }
+                        else
+                        {
+                            ChangeAIState(AIState.Return);
+                        }
+                        
                     }
                 }
                 else
@@ -78,6 +86,14 @@ public class SniperAIController : AIController
                 if(IsTimePassed(5))
                 {
                     ChangeAIState(AIState.Attack);
+                }
+                break;
+            case AIState.Return:
+                DoReturnState();
+                if (IsTimePassed(2))
+                {
+                    ChangeAIState(AIState.Scan);
+
                 }
                 break;
         }

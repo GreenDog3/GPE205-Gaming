@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 196a0601d47054c4aa40cac8073e882f, type: 2}
     - target: {fileID: 9075264635133303355, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Name
-      value: GuardTank
+      value: GuardTank Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
@@ -100,7 +100,7 @@ MonoBehaviour:
   pawn: {fileID: 4254448952240232947}
   currentState: 1
   target: {fileID: 0}
-  hearingDistance: 5
+  hearingDistance: 15
   waypoints:
   - {fileID: 0}
   - {fileID: 0}

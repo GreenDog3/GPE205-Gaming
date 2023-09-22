@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 2573567095258734981}
   - component: {fileID: 5876166176443537547}
   - component: {fileID: 5988912996442891245}
+  - component: {fileID: -8657588490847008109}
+  - component: {fileID: 788890537210436201}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -61,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 9075264635133303355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2348278, y: 0.6417382, z: 1.1809459}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8911755652218458926}
@@ -81,8 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61dd0e22b707974cae1233d5b00f3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 10
-  backwardSpeed: 3
+  forwardSpeed: 50
+  backwardSpeed: 40
   tankRotationSpeed: 50
   fireForce: 1000
   damageDone: 20
@@ -145,6 +147,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 100
+--- !u!114 &-8657588490847008109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075264635133303355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32584675963fff343a7bd7ded9953a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerups: []
+--- !u!65 &788890537210436201
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075264635133303355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &8945930008282723525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -223,19 +251,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a133184c430ed64aa0edfef27f3c2dd, type: 3}
   m_PrefabInstance: {fileID: 8945930008282723525}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &465820325305269513
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8135535161203739028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1156175, y: 1.0275304, z: 1.5775304}
-  m_Center: {x: 0.0078087747, y: 0.48623472, z: 0.111234754}
 --- !u!114 &8587567807194917137
 MonoBehaviour:
   m_ObjectHideFlags: 0

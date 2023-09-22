@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9dff0a82dfd24d847a6806817c093cae, type: 2}
     - target: {fileID: 9075264635133303355, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Name
-      value: SniperTank
+      value: SniperTank Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
@@ -89,6 +89,6 @@ MonoBehaviour:
   pawn: {fileID: 0}
   currentState: 1
   target: {fileID: 0}
-  hearingDistance: 10
+  hearingDistance: 20
   waypoints: []
   currentWaypoint: 0

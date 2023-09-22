@@ -16,7 +16,11 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage, Pawn source)
     {   //make sure current health can't go below zero
         currentHealth = Mathf.Clamp(currentHealth - damage, minHealth, maxHealth);
-        Debug.Log(source.name + " SLAMS " + gameObject.name + " WITH " + damage + " POINTS OF DAMAGE!");
+        if (source != null)
+        {
+            Debug.Log(source.name + " SLAMS " + gameObject.name + " WITH " + damage + " POINTS OF DAMAGE!");
+        }
+        
         //if current health is zero, Die
         if (Mathf.Approximately(currentHealth, minHealth))
         {
@@ -32,6 +36,10 @@ public class Health : MonoBehaviour
     public void Die(Pawn source) 
     {   //when you die, you are destroyed
         Destroy(gameObject);
-        Debug.Log(source.name + " DESTROYS " + gameObject.name + " WITH FACTS AND LOGIC!");
+        if (source != null)
+        {
+            Debug.Log(source.name + " DESTROYS " + gameObject.name + " WITH FACTS AND LOGIC!");
+        }
+        
     }
 }

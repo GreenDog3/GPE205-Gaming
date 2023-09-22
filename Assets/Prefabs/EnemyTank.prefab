@@ -54,15 +54,15 @@ PrefabInstance:
     - target: {fileID: 7775401329577453633, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 109cdc0a94ee9f04e8bd650ca160981f, type: 2}
+      objectReference: {fileID: 2100000, guid: a2997443d04626a45b07208a1978ca36, type: 2}
     - target: {fileID: 7775401329577453633, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 109cdc0a94ee9f04e8bd650ca160981f, type: 2}
+      objectReference: {fileID: 2100000, guid: a2997443d04626a45b07208a1978ca36, type: 2}
     - target: {fileID: 7775401329577453633, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 109cdc0a94ee9f04e8bd650ca160981f, type: 2}
+      objectReference: {fileID: 2100000, guid: a2997443d04626a45b07208a1978ca36, type: 2}
     - target: {fileID: 9075264635133303355, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Name
       value: EnemyTank

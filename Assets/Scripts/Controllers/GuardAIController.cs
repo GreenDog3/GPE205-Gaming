@@ -65,17 +65,25 @@ public class GuardAIController : AIController
                 DoPatrolState();
                 if (IsTimePassed(1))
                 {
-                    if (IsCanHear(target))
+                    if (target != null)
                     {
-                        if (target != null)
+                        if (IsCanHear(target))
                         {
-                            ChangeAIState(AIState.Turn);
+                            if (target != null)
+                            {
+                                ChangeAIState(AIState.Turn);
+                            }
+                        }
+                        else
+                        {
+                            ChangeAIState(AIState.Scan);
                         }
                     }
                     else
                     {
-                        ChangeAIState(AIState.Scan);
+                        ChangeAIState(AIState.Idle);
                     }
+                    
                     
                 }
                 break;

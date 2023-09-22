@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 04c80481f974e7d429108ce88339e01e, type: 2}
     - target: {fileID: 9075264635133303355, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
       propertyPath: m_Name
-      value: SlackerTank
+      value: SlackerTank Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b0f22957f526d14aabe0866754ecaae, type: 3}
@@ -89,6 +89,6 @@ MonoBehaviour:
   pawn: {fileID: 0}
   currentState: 1
   target: {fileID: 0}
-  hearingDistance: 5
+  hearingDistance: 15
   waypoints: []
   currentWaypoint: 0
